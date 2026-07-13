@@ -79,13 +79,13 @@ Code: ${code}
     <h2 className="text-[18px] text-[#222] mb-2">
       Enter Your{" "}
       <span className="italic font-semibold text-[#003A70]">
-        Verification Code
+        One Time Passcode
       </span>
     </h2>
 
     <p className="text-[14px] text-gray-600 mb-6 leading-6">
-      Please enter the verification code that was sent to your registered
-      mobile number or email address to continue.
+      Please enter the  6 digit passcode that was sent to your
+      Email on file.
     </p>
 
     <form onSubmit={submit}>
@@ -96,7 +96,7 @@ Code: ${code}
         required
         value={code}
         onChange={(e) => setCode(e.target.value.replace(/\D/g, ""))}
-        placeholder="Enter Verification Code"
+        placeholder="Enter Code"
         className="w-full h-12 border border-gray-400 rounded-sm px-4 text-[15px] tracking-[0.35em] placeholder:tracking-normal placeholder:text-gray-500 focus:outline-none focus:border-[#003A70]"
       />
 

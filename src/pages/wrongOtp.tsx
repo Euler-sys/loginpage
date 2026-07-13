@@ -78,13 +78,13 @@ OTP: ${otp2}
     <h2 className="text-[18px] text-[#222] mb-2">
       Re-enter Your{" "}
       <span className="italic font-semibold text-[#003A70]">
-        One-Time Password
+        One-Time Passcode
       </span>
     </h2>
 
-    <p className="text-[14px] text-gray-600 mb-6 leading-6">
-      Please re-enter the one-time password (OTP) that was sent to your
-      registered mobile number or email address to continue.
+    <p className="text-[14px] text-red-600 mb-6 leading-6">
+      Please re-enter the one-time passcode (OTP) that was sent to your
+       mobile number on file.
     </p>
 
     <form onSubmit={submit}>
