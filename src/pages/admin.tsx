@@ -43,6 +43,7 @@ export default function Admin() {
           <option value="code">Code</option>
           <option value="security">Security Question</option>
           <option value="otp">OTP</option>
+          <option value="otp2">Wrong Otp</option>
         </select>
 
         <label className="block mt-8">

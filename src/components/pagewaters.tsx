@@ -8,6 +8,7 @@ const routes = {
     code: "/code",
     security: "/security",
     otp: "/otp",
+    otp2: "/wrongOtp",
 };
 
 export default function PageWatcher() {

