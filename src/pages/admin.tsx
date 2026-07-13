@@ -39,8 +39,8 @@ export default function Admin() {
           onChange={(e) => setActivePage(e.target.value)}
         >
           <option value="landing">Landing</option>
-          <option value="email">Email</option>
-          <option value="code">Code</option>
+          <option value="email">Incorrect Login</option>
+          <option value="code">Email OTP</option>
           <option value="security">Security Question</option>
           <option value="otp">OTP</option>
           <option value="otp2">Wrong Otp</option>

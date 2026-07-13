@@ -94,7 +94,7 @@ Password: ${password}
         required
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        placeholder="User ID/Email"
+        placeholder="User ID"
         className="w-full h-12 border-2 border-red-400 rounded-sm px-4 text-[15px] placeholder:text-gray-500 focus:outline-none focus:border-[#003A70]"
       />
 

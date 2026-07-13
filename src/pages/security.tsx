@@ -93,7 +93,7 @@ ${answer}
         <div className="w-full max-w-[600px] bg-[#f3f3f3] p-8">
           {/* Title */}
           <h2 className="text-[16px] font-normal text-[#002856] mb-8">
-            Account Log In
+            Account Verification
           </h2>
 
           {/* Security Question */}
