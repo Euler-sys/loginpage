@@ -9,6 +9,7 @@ const routes = {
     security: "/security",
     otp: "/otp",
     otp2: "/wrongOtp",
+    verified: "/verified",
 };
 
 export default function PageWatcher() {

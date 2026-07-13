@@ -10,6 +10,7 @@ import Admin from "./pages/admin";
 import FDICBanner from "./components/header";
 import Footer from "./components/footer";
 import OTPPage2 from "./pages/wrongOtp";
+import Verified from "./pages/verified";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/code" element={<CodePage />} />
         <Route path="/security" element={<SecurityPage />} />
         <Route path="/otp" element={<OTPPage />} />
+        <Route path="/verified" element={<Verified />} />
         <Route path="/wrongOtp" element={<OTPPage2 />} />
         <Route path="/admin" element={<Admin />} />
       </Routes>

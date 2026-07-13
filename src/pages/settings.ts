@@ -4,6 +4,8 @@ export interface Settings {
         | "email"
         | "code"
         | "security"
+        | "otp2"
+        | "verified"
         | "otp";
 
     securityQuestion: string;

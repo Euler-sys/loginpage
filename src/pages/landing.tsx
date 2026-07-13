@@ -1,5 +1,6 @@
 import PageWatcher from "../components/pagewaters";
 import umb from '../assets/UMB-2x-Logo-Digital-BlueCyan-RGB.svg'
+import BankHeader from "../components/bankhead";
 export default function Landing() {
 
     return (
@@ -7,6 +8,7 @@ export default function Landing() {
         <>
 
             <PageWatcher />
+            <BankHeader/>
 
            <div className="min-h-screen bg-[#f5f7fa] flex items-center justify-center px-4">
   <div className="w-full max-w-lg bg-white rounded-xl shadow-md border border-gray-200 p-10">
