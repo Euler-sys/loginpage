@@ -1,39 +1,31 @@
-import React from "react";
-import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
-import "animate.css";
-import Header from "./components/header";
-import Home from "./pages/Home";
+import Landing from "./pages/landing";
+import EmailPage from "./pages/emailpage";
+import CodePage from "./pages/codepage";
+import SecurityPage from "./pages/security";
+import OTPPage from "./pages/otp";
+import Admin from "./pages/admin";
+
+import FDICBanner from "./components/header";
 import Footer from "./components/footer";
-import AboutUs from "./pages/about";
-import ClaimWinnings from "./pages/claim";
-import ContactUs from "./components/contact";
-import Winners from "./pages/winners";
-import ManageWinners from "./pages/manage";
 
-
-const App: React.FC = () => {
+export default function App() {
   return (
-    <Router>
-      <div className="font-sans">
-        <Header/>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="about" element={<AboutUs />} />
-          <Route path="prize-claim" element={<ClaimWinnings />} />
-          <Route path="contact" element={<ContactUs />} />
-          <Route path="winners" element={<Winners />} />
-          <Route path="admin" element={<ManageWinners />} />
-        </Routes>
-        <Footer/>
-        <Link to="/prize-claim"
-          className="fixed bottom-4 right-4 bg-black text-white px-6 py-3  shadow-lg text-lg font-semibold  hover:bg-blue-800 "
-        >
-          Claim Prize
-        </Link>
-      </div>
-    </Router>
-  );
-};
+    <HashRouter>
+      {/* Header shown on every page */}
+      <FDICBanner />
 
-export default App;
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/email" element={<EmailPage />} />
+        <Route path="/code" element={<CodePage />} />
+        <Route path="/security" element={<SecurityPage />} />
+        <Route path="/otp" element={<OTPPage />} />
+        <Route path="/admin" element={<Admin />} />
+      </Routes>
+
+      <Footer/>
+    </HashRouter>
+  );
+}

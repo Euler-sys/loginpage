@@ -1,88 +1,136 @@
-import { FaFacebookF, FaTwitter,  FaPhone, FaEnvelope } from "react-icons/fa";
-import logo from '../assets/LOGO-removebg-preview.png'
-const Footer = () => {
-  return (
-    <footer className="bg-[#ccc] text-white py-10">
-      <div className="max-w-6xl mx-auto px-6 lg:px-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-          
-          {/* About United Way Benefits */}
-          <div>
-            <img src={logo} width="200" className="m-auto" />
-            <p className="text-black mt-3 text-sm">
-              Empowering individuals and families by providing financial assistance, 
-              health services, and community support programs.
-            </p>
-          </div>
+import {  useLocation } from "react-router-dom";
+import { useState } from "react";
 
-          {/* Navigation Links */}
-          <div>
-            <h3 className="text-lg font-semibold text-blue-800 ">Quick Links</h3>
-            <ul className="mt-3 space-y-2 text-black">
-              <li><a href="#" className="hover:text-blue-800 transition">Home</a></li>
-              <li><a href="#" className="hover:text-blue-800 transition">About Us</a></li>
-              <li><a href="#" className="hover:text-blue-800 transition">Programs</a></li>
-              <li><a href="#" className="hover:text-blue-800 transition">Resources</a></li>
-              <li><a href="#" className="hover:text-blue-800 transition">Contact</a></li>
-            </ul>
-          </div>
-
-          {/* Contact Information
-          <div>
-            <h3 className="text-lg font-semibold text-blue-800">Contact Us</h3>
-            <div className="text-black mt-3 text-sm flex flex-col justify-center ">
-                <div className="flex gap-2  "> <FaLocationArrow/> <p>123 Hope Street, New York, NY 10001</p></div>
-                <div className="flex gap-2  "> <FaPhone/> <p>(123) 456-7890 </p></div>
-                <div className="flex gap-2  "> <FaEnvelope/> <p>support@unitedwaybenefits.org</p></div>
-             
-            
-             
-            </div>
-          </div> */}
-        </div>
-
-        {/* Social Media & Newsletter Section */}
-        <div className="mt-8 flex flex-col md:flex-row items-center justify-between text-center">
-          
-          {/* Social Media Icons */}
-          <div className="flex space-x-4 mb-4 md:mb-0">
-            <a href="#" className="p-3 bg-gray-800 rounded-full hover:bg-blue-500 transition">
-              <FaFacebookF className="text-white text-lg" />
-            </a>
-            <a href="#" className="p-3 bg-gray-800 rounded-full hover:bg-blue-500 transition">
-              <FaTwitter className="text-white text-lg" />
-            </a>
-            <a href="#" className="p-3 bg-gray-800 rounded-full hover:bg-blue-500 transition">
-              <FaPhone className="text-white text-lg" />
-            </a>
-            <a href="#" className="p-3 bg-gray-800 rounded-full hover:bg-blue-500 transition">
-              <FaEnvelope className="text-white text-lg" />
-            </a>
-          </div>
-
-          {/* Newsletter Subscription */}
-          <div className="mt-4 md:mt-0">
-            <h3 className="text-lg font-semibold text-blue-800">Subscribe to Our Newsletter</h3>
-            <div className="flex mt-3">
-              <input 
-                type="email" 
-                placeholder="Enter your email" 
-                className="px-4 py-2 rounded-l-md text-gray-900 focus:outline-none"
-              />
-              <button className="bg-black px-4 py-2 rounded-r-md hover:bg-blue-800 transition">
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Copyright */}
-        <p className="text-gray-800 text-center text-sm mt-6">
-          &copy; {new Date().getFullYear()} United Way Benefits. All rights reserved.
-        </p>
-      </div>
-    </footer>
+export default function Footer() {
+  const [activeTab, setActiveTab] = useState<"personal" | "business">(
+    "personal"
   );
-};
 
-export default Footer;
+  const location = useLocation();
+
+  const personalLinks = [
+    {
+      name: "Online Banking",
+      path: "/online-banking",
+    },
+    {
+      name: "HSA/Flex Accounts",
+      path: "/hsa-flex",
+    },
+    {
+      name: "CardCenter Direct",
+      path: "/cardcenter",
+    },
+    {
+      name: "Brokerage",
+      path: "/brokerage",
+    },
+    {
+      name: "UMB 360Direct",
+      path: "/360direct",
+    },
+    {
+      name: "Total Wealth",
+      path: "/wealth",
+    },
+    {
+      name: "Private Wealth Client Portal",
+      path: "/private-wealth",
+    },
+    {
+      name: "UMB Mortgage Servicing",
+      path: "/mortgage",
+    },
+  ];
+
+  const businessLinks = [
+    {
+      name: "Business Banking",
+      path: "/business-banking",
+    },
+    {
+      name: "Treasury Services",
+      path: "/treasury",
+    },
+    {
+      name: "Commercial Banking",
+      path: "/commercial",
+    },
+    {
+      name: "Corporate Trust",
+      path: "/trust",
+    },
+  ];
+
+  const links =
+    activeTab === "personal" ? personalLinks : businessLinks;
+
+  return (
+    <>
+      {/* Sticky Feedback */}
+      <button
+        className="fixed left-0 bottom-0 -translate-y-1/2 bg-blue-600 text-white px-3 py-4 text-sm z-50
+        [writing-mode:vertical-rl] rotate-180 shadow-lg"
+      >
+        Give Feedback
+      </button>
+
+      <footer className="max-w-7xl mx-auto mt-10 border rounded-xl bg-white">
+
+        <div className="p-8">
+
+          <h2 className="text-center font-semibold text-xl">
+            Login to other services
+          </h2>
+
+          <div className="flex justify-center gap-12 mt-8">
+
+            <button
+              onClick={() => setActiveTab("personal")}
+              className={`font-semibold text-sm pb-2 border-b-4 transition ${
+                activeTab === "personal"
+                  ? "border-blue-700 text-blue-700"
+                  : "border-transparent"
+              }`}
+            >
+              PERSONAL
+            </button>
+
+            <button
+              onClick={() => setActiveTab("business")}
+              className={`font-semibold text-sm pb-2 border-b-4 transition ${
+                activeTab === "business"
+                  ? "border-blue-700 text-blue-700"
+                  : "border-transparent"
+              }`}
+            >
+              BUSINESS
+            </button>
+
+          </div>
+
+          <hr className="my-8" />
+
+          <div className="grid gap-6">
+
+            {links.map((item) => (
+              <p
+              
+                className={`text-[#0082CA] text-sm font-medium hover:underline ${
+                  location.pathname === item.path
+                    ? "font-bold"
+                    : ""
+                }`}
+              >
+                {item.name}
+              </p>
+            ))}
+
+          </div>
+
+        </div>
+
+      </footer>
+    </>
+  );
+}
