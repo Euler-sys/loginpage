@@ -12,3 +12,18 @@
 .custom-spin {
   animation: custom-spin 1s linear infinite;
 }
+
+@keyframes scale {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-scale {
+  animation: scale 0.25s ease-out;
+}
